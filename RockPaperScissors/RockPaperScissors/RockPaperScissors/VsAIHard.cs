@@ -20,7 +20,7 @@ namespace RockPaperScissors
 
             while (gameActive == true)
             {
-                display.OutputToFile("ScoresVsAI.txt");
+                display.OutputToFile("ScoresVsHardAI.txt");
                 Console.WriteLine("New game? yes/no");
                 string userContinue = Console.ReadLine().ToLower();
                 Console.Clear();
@@ -28,7 +28,7 @@ namespace RockPaperScissors
 
                 if (userContinue == "no")
                 {
-                    display.OutputToFile("ScoresVsAI.txt");
+                    display.OutputToFile("ScoresVsHardAI.txt");
                     break;
                 }
 

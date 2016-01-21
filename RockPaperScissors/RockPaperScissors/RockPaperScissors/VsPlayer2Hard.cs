@@ -30,7 +30,7 @@ namespace RockPaperScissors
 
             while (gameActive == true)
             {
-                display.OutputToFile2("ScoresVsOpponent.txt");
+                display.OutputToFile2("ScoresVsOpponentHard.txt");
                 Console.WriteLine("New game? yes/no");
                 string userContinue = Console.ReadLine().ToLower();
                 Console.Clear();
@@ -39,7 +39,7 @@ namespace RockPaperScissors
 
                 if (userContinue == "no")
                 {
-                    display.OutputToFile2("ScoresVsOpponent.txt");
+                    display.OutputToFile2("ScoresVsOpponentHard.txt");
                     break;
                 }
 
