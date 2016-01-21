@@ -53,7 +53,9 @@
     <Compile Include="Rock.cs" />
     <Compile Include="Scissors.cs" />
     <Compile Include="VsAI.cs" />
+    <Compile Include="VsAIHard.cs" />
     <Compile Include="VsPlayer2.cs" />
+    <Compile Include="VsPlayer2Hard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

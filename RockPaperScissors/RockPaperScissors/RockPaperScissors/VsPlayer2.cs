@@ -78,7 +78,7 @@ namespace RockPaperScissors
                         }
                         else
                         {
-                            Console.WriteLine("You must choose rock, paper or scissors!");
+                            Console.WriteLine("You must choose Rock, Paper, or Scissors!");
                             Console.WriteLine(Environment.NewLine);
                         }
 
@@ -110,7 +110,7 @@ namespace RockPaperScissors
                         }
                         else
                         {
-                            Console.WriteLine("You must choose rock, paper or scissors!");
+                            Console.WriteLine("You must choose Rock, Paper, or Scissors!");
                             Console.WriteLine(Environment.NewLine);
                         }
                     }
@@ -141,7 +141,7 @@ namespace RockPaperScissors
                         }
                         else
                         {
-                            Console.WriteLine("You must choose rock, paper or scissors!");
+                            Console.WriteLine("You must choose Rock, Paper, or Scissors!");
                             Console.WriteLine(Environment.NewLine);
                         }
 

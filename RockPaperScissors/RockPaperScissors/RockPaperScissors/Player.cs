@@ -14,14 +14,14 @@ namespace RockPaperScissors
         public string Player1Input()
         {
             Console.WriteLine("Player 1");
-            Console.WriteLine("Choose: Rock Paper Scissors");
+            Console.WriteLine("Choose: Rock, Paper, Scissors, Lizard, or Spock");
             player1Choice = Console.ReadLine().ToLower();
             return player1Choice;
         }
         public string Player2Input()
         {
             Console.WriteLine("Player 2");
-            Console.WriteLine("Choose: Rock Paper Scissors");
+            Console.WriteLine("Choose: Rock, Paper, Scissors, Lizard, or Spock");
             player2Choice = Console.ReadLine().ToLower();
             return player2Choice;
         }

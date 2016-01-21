@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-    public class VsAI
+    public class VsAIHard
     {
         Display display;
         AI ai;
         Player player;
-        public void VsComputer()
+        public void VsComputerHard()
         {
             display = new Display();
             player = new Player();
@@ -61,9 +61,23 @@ namespace RockPaperScissors
                             Console.WriteLine("The computers Rock crushed your Scissors, you lose!");
                             Console.WriteLine(Environment.NewLine);
                         }
+                        else if (player.player1Choice == "lizard")
+                        {
+                            display.aiScore++;
+                            Console.WriteLine("The computer chose Rock");
+                            Console.WriteLine("The computers Rock crushed your Lizard, you lose!");
+                            Console.WriteLine(Environment.NewLine);
+                        }
+                        else if (player.player1Choice == "spock")
+                        {
+                            display.player1Score++;
+                            Console.WriteLine("The computer chose Rock");
+                            Console.WriteLine("Spock vaporized the computers Rock, you win.");
+                            Console.WriteLine(Environment.NewLine);
+                        }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, or Scissors!");
+                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
                             Console.WriteLine(Environment.NewLine);
                         }
 
@@ -88,14 +102,14 @@ namespace RockPaperScissors
                         }
                         else if (player.player1Choice == "scissors")
                         {
-                            Console.WriteLine("The computer chose paper");
+                            Console.WriteLine("The computer chose Paper");
                             Console.WriteLine("The Players Scissors cuts the computers Paper, you win");
                             display.player1Score++;
                             Console.WriteLine(Environment.NewLine);
                         }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, or Scissors!");
+                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
                             Console.WriteLine(Environment.NewLine);
                         }
                     }
@@ -126,9 +140,17 @@ namespace RockPaperScissors
                         }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, or Scissors!");
+                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
                             Console.WriteLine(Environment.NewLine);
                         }
+
+                    }
+                    else if (ai.aiChoice == "lizard")
+                    {
+
+                    }
+                    else if (ai.aiChoice == "spock")
+                    {
 
                     }
                 }
