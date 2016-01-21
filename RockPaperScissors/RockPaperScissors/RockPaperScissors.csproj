@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AI.cs" />
     <Compile Include="Display.cs" />
+    <Compile Include="OutputFile.cs" />
     <Compile Include="Paper.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
