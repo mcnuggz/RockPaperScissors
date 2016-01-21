@@ -11,12 +11,10 @@ namespace RockPaperScissors
         static void Main(string[] args)
         {
             AI ai = new AI();
-
             Player player = new Player();
             Display display = new Display();
             bool gameActive = true;
-
-  
+ 
             while (gameActive == true)
             {
                 display.OutputToFile("Scores.txt");
