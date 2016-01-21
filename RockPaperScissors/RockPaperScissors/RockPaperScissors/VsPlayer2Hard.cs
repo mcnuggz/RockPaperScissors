@@ -266,11 +266,12 @@ namespace RockPaperScissors
                                 Console.WriteLine(Environment.NewLine);
                             }
                             else
-                        {
-                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
-                            Console.WriteLine(Environment.NewLine);
-                        }
+                            {
+                                Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
+                                Console.WriteLine(Environment.NewLine);
+                            }
 
+                        }
                     }
                 }
             }
