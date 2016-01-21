@@ -45,11 +45,11 @@ namespace RockPaperScissors
 
                 if (userContinue == "yes")
                 {
-                    player.Player1Input();
+                    player.Player1InputHard();
                     Console.Clear();
 
                     display.DisplayScoreBoardVsP2();
-                    player.Player2Input();
+                    player.Player2InputHard();
                     Console.Clear();
 
                     display.DisplayScoreBoardVsP2();

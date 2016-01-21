@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-    public class Scissors
+    internal class Scissors
     {
+        public string Name;
+        public Scissors(string name)
+        {
+            this.Name = name;
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace RockPaperScissors
         {
             display = new Display();
             player = new Player();
-            ai = new AI();
+            ai = new AI("AI");
             bool gameActive = true;
 
             while (gameActive == true)
@@ -35,7 +35,7 @@ namespace RockPaperScissors
                 if (userContinue == "yes")
                 {
                     ai.AITurn();
-                    player.Player1Input();
+                    player.Player1InputHard();
                     Console.WriteLine(Environment.NewLine);
 
                     //rock

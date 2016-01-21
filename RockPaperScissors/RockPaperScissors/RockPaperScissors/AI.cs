@@ -10,6 +10,11 @@ namespace RockPaperScissors
     {
         Random random = new Random();
         public string aiChoice;
+        public string Name;
+        public AI(string name)
+        {
+            this.Name = name;
+        }
 
         public string AITurn()
         {

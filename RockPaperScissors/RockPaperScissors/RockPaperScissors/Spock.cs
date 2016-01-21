@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-    internal class Rock
+    internal class Spock
     {
         public string Name;
-        public Rock(string name)
+        public Spock(string name)
         {
             this.Name = name;
         }
