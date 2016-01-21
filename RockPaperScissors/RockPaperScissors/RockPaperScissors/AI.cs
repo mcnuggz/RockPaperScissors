@@ -10,7 +10,7 @@ namespace RockPaperScissors
     {
         Random random = new Random();
         public string aiChoice;
-        
+
         public string AITurn()
         {
             int aiRoll = random.Next(1,3);

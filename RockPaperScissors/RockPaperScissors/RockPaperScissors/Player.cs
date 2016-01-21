@@ -8,15 +8,23 @@ namespace RockPaperScissors
 {
     public class Player
     {
-        public string playerChoice;
-        public int playerScore = 0;
+        public string player1Choice;
+        public string player2Choice;
 
-        public string UserInput()
+        public string Player1Input()
         {
-            Console.WriteLine(Environment.NewLine + "Choose: Rock Paper Scissors");
-            playerChoice = Console.ReadLine().ToLower();
-            return playerChoice;
+            Console.WriteLine("Player 1");
+            Console.WriteLine("Choose: Rock Paper Scissors");
+            player1Choice = Console.ReadLine().ToLower();
+            return player1Choice;
         }
-        
+        public string Player2Input()
+        {
+            Console.WriteLine("Player 2");
+            Console.WriteLine("Choose: Rock Paper Scissors");
+            player2Choice = Console.ReadLine().ToLower();
+            return player2Choice;
+        }
+
     }
 }
