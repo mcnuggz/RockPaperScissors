@@ -102,7 +102,7 @@ namespace RockPaperScissors
                         }
                         else if (player.player1Choice == "scissors")
                         {
-                            Console.WriteLine("{{0} chose {2} and {1} chose {3}", player2Name, player1Name, paper.Name, scissors.Name);
+                            Console.WriteLine("{0} chose {2} and {1} chose {3}", player2Name, player1Name, paper.Name, scissors.Name);
                             paper.DisplayWin(player.player1Choice, player.player2Choice);
                             Console.WriteLine("{0} wins!\r\n", player1Name);
                             display.player1Score++;
