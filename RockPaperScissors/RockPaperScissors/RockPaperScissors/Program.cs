@@ -22,7 +22,7 @@ namespace RockPaperScissors
             switch (gameChoice)
             {
                 case "1":
-                    Console.WriteLine("Do you want the play on [Normal] or [Hard] difficulty?");
+                    Console.WriteLine("Do you want the play on [Normal] or [Hard] difficulty?\r\n");
                     Console.WriteLine("Normal is normal Rock, Paper, Scissors. Hard has Rock, Paper, Scissors, Lizard, Spock");
                     gameP2Difficulty = Console.ReadLine().ToLower();
                     if (gameP2Difficulty == "normal")
@@ -36,7 +36,7 @@ namespace RockPaperScissors
                     break;
 
                 case "2":
-                    Console.WriteLine("Do you want the play on [Normal] or [Hard] difficulty?");
+                    Console.WriteLine("Do you want the play on [Normal] or [Hard] difficulty?\r\n");
                     Console.WriteLine("Normal is normal Rock, Paper, Scissors. Hard has Rock, Paper, Scissors, Lizard, Spock");
                     gameAIDifficulty = Console.ReadLine().ToLower();
                     if (gameAIDifficulty == "normal")

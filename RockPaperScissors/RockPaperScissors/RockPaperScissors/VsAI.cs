@@ -50,25 +50,25 @@ namespace RockPaperScissors
                         if (player.player1Choice == "rock")
                         {
                             Console.WriteLine("The {0} chose {1}", ai.Name, rock.Name);
-                            Console.WriteLine("It is a tie.\n");
+                            Console.WriteLine("It is a tie.\r\n");
                         }
                         else if (player.player1Choice == "paper")
                         {
                             display.player1Score++;
                             Console.WriteLine("The {0} chose {1}", ai.Name, rock.Name);
                             paper.DisplayWin(player.player1Choice, ai.aiChoice);
-                            Console.WriteLine("You win!\n");
+                            Console.WriteLine("You win!\r\n");
                         }
                         else if (player.player1Choice == "scissors")
                         {
                             display.aiScore++;
                             Console.WriteLine("The {0} chose {1}", ai.Name, rock.Name);
-                            scissors.DisplayLose(player.player1Choice, ai.aiChoice);
-                            Console.WriteLine("{0} wins!\n",ai.Name);
+                            scissors.DisplayLoss(player.player1Choice, ai.aiChoice);
+                            Console.WriteLine("{0} wins!\r\n",ai.Name);
                         }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, or Scissors!\n");
+                            Console.WriteLine("You must choose Rock, Paper, or Scissors!\r\n");
                         }
 
                     }
@@ -78,27 +78,27 @@ namespace RockPaperScissors
                         if (player.player1Choice == "rock")
                         {
                             Console.WriteLine("The {0} chose {1}", ai.Name, rock.Name);
-                            rock.DisplayLose(player.player1Choice, ai.aiChoice);
-                            Console.WriteLine("{0} wins!\n",ai.Name);
+                            rock.DisplayLoss(player.player1Choice, ai.aiChoice);
+                            Console.WriteLine("{0} wins!\r\n",ai.Name);
                             display.aiScore++;
                         }
                         else if (player.player1Choice == "paper")
                         {
                             Console.WriteLine("The {0} chose {1}", ai.Name, paper.Name);
-                            Console.WriteLine("It is a tie\n");                            
+                            Console.WriteLine("It is a tie\r\n");                            
 
                         }
                         else if (player.player1Choice == "scissors")
                         {
                             Console.WriteLine("The {0} chose {1}", ai.Name, paper.Name);
                             scissors.DisplayWin(player.player1Choice, ai.aiChoice);
-                            Console.WriteLine("You win!\n");
+                            Console.WriteLine("You win!\r\n");
                             display.player1Score++;
 
                         }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, or Scissors!\n");
+                            Console.WriteLine("You must choose Rock, Paper, or Scissors!\r\n");
                         }
                     }
 
@@ -111,25 +111,25 @@ namespace RockPaperScissors
                             display.player1Score++;
                             Console.WriteLine("The {0} chose {1}", ai.Name, scissors.Name);
                             rock.DisplayWin(player.player1Choice, ai.aiChoice);
-                            Console.WriteLine("You win!\n");
+                            Console.WriteLine("You win!\r\n");
                         }
                         else if (player.player1Choice == "paper")
                         {
                             //ai scissors, you paper = lose
                             display.aiScore++;
                             Console.WriteLine("The {0} chose {1}", ai.Name, scissors.Name);
-                            paper.DisplayLose(player.player1Choice, ai.aiChoice);
-                            Console.WriteLine("{0} wins!\n", ai.Name);
+                            paper.DisplayLoss(player.player1Choice, ai.aiChoice);
+                            Console.WriteLine("{0} wins!\r\n", ai.Name);
                         
                         }
                         else if (player.player1Choice == "scissors")
                         {
                             Console.WriteLine("The {0} chose {1}", ai.Name, scissors.Name);
-                            Console.WriteLine("It is a tie\n");
+                            Console.WriteLine("It is a tie\r\n");
                         }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, or Scissors!\n");
+                            Console.WriteLine("You must choose Rock, Paper, or Scissors!\r\n");
                         }
 
                     }

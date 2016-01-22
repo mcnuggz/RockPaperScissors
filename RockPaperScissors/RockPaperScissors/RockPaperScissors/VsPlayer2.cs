@@ -61,27 +61,25 @@ namespace RockPaperScissors
                         if (player.player1Choice == "rock")
                         {
                             Console.WriteLine("{0} and {1} chose {2}", player1Name, player2Name, rock.Name);
-                            Console.WriteLine("It is a tie ");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("It is a tie\r\n");
                         }
                         else if (player.player1Choice == "paper")
                         {
                             display.player1Score++;
                             Console.WriteLine("{0} chose {2} and {1} chose {3}", player2Name, player1Name, rock.Name, paper.Name);
-                            Console.WriteLine("{0} wins!", player1Name);
-                            Console.WriteLine(Environment.NewLine);
+                            paper.DisplayWin(player.player1Choice, player.player2Choice);
+                            Console.WriteLine("{0} wins!\r\n", player1Name);
                         }
                         else if (player.player1Choice == "scissors")
                         {
                             display.player2Score++;
                             Console.WriteLine("{0} chose {2} and {1} chose {3}", player2Name, player1Name, rock.Name, scissors.Name);
-                            Console.WriteLine("{0} wins!", player2Name);
-                            Console.WriteLine(Environment.NewLine);
+                            scissors.DisplayLoss(player.player1Choice, player.player2Choice);
+                            Console.WriteLine("{0} wins!\r\n", player2Name);
                         }
                         else
                         {
-                            Console.WriteLine("You must choose {0}, {1}, or {2}!", rock.Name, paper.Name, scissors.Name);
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You must choose {0}, {1}, or {2}!\r\n", rock.Name, paper.Name, scissors.Name);
                         }
 
                     }
@@ -91,29 +89,27 @@ namespace RockPaperScissors
                         if (player.player1Choice == "rock")
                         {
                             Console.WriteLine("{0} chose {2} and {1} chose {3}", player2Name, player1Name, paper.Name, rock.Name);
-                            Console.WriteLine("{0} wins!", player2Name);
+                            rock.DisplayLoss(player.player1Choice, player.player2Choice);
+                            Console.WriteLine("{0} wins!\r\n", player2Name);
                             display.player2Score++;
-                            Console.WriteLine(Environment.NewLine);
 
                         }
                         else if (player.player1Choice == "paper")
                         {
                             Console.WriteLine("{0} and {1} chose {2}", player1Name, player2Name, paper.Name);
-                            Console.WriteLine("It is a tie");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("It is a tie\r\n");
 
                         }
                         else if (player.player1Choice == "scissors")
                         {
                             Console.WriteLine("{{0} chose {2} and {1} chose {3}", player2Name, player1Name, paper.Name, scissors.Name);
-                            Console.WriteLine("{0} wins!", player1Name);
+                            paper.DisplayWin(player.player1Choice, player.player2Choice);
+                            Console.WriteLine("{0} wins!\r\n", player1Name);
                             display.player1Score++;
-                            Console.WriteLine(Environment.NewLine);
                         }
                         else
                         {
-                            Console.WriteLine("You must choose {0}, {1}, or {2}!", rock.Name, paper.Name, scissors.Name);
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You must choose {0}, {1}, or {2}!\r\n", rock.Name, paper.Name, scissors.Name);
                         }
                     }
                     //scissors
@@ -124,27 +120,25 @@ namespace RockPaperScissors
                             //ai scissors, you rock = win
                             display.player1Score++;
                             Console.WriteLine("{0} chose {2} and {1} chose {3}", player2Name, player1Name, scissors.Name, rock.Name);
-                            Console.WriteLine("{0} wins!", player1Name);
-                            Console.WriteLine(Environment.NewLine);
+                            rock.DisplayWin(player.player1Choice, player.player2Choice);
+                            Console.WriteLine("{0} wins!\r\n", player1Name);
                         }
                         else if (player.player1Choice == "paper")
                         {
                             //ai scissors, you paper = lose
                             display.player2Score++;
                             Console.WriteLine("{0} chose {2} and {1} chose {3}", player2Name, player1Name, scissors.Name, paper.Name);
-                            Console.WriteLine("{0} wins!", player2Name);
-                            Console.WriteLine(Environment.NewLine);
+                            paper.DisplayLoss(player.player1Choice, player.player2Choice);
+                            Console.WriteLine("{0} wins!\r\n", player2Name);
                         }
                         else if (player.player1Choice == "scissors")
                         {
                             Console.WriteLine("{0} and {1} chose Scissors", player2Name, player1Name, scissors.Name);
-                            Console.WriteLine("It is a tie");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("It is a tie.\r\n");
                         }
                         else
                         {
-                            Console.WriteLine("You must choose {0}, {1}, or {2}!", rock.Name, paper.Name, scissors.Name);
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You must choose {0}, {1}, or {2}!\r\n", rock.Name, paper.Name, scissors.Name);
                         }
 
                     }

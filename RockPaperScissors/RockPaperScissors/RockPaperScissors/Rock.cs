@@ -15,7 +15,7 @@ namespace RockPaperScissors
             this.Name = name;
         }
 
-        public void DisplayLose(string firstChoice, string secondChoice)
+        public void DisplayLoss(string firstChoice, string secondChoice)
         {
             if (firstChoice == "rock" && secondChoice == "paper")
             {

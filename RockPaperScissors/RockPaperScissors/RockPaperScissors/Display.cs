@@ -21,7 +21,7 @@ namespace RockPaperScissors
                 int left = Console.CursorLeft;
                 Console.SetCursorPosition(0, 0);
                 Console.WriteLine("***********Score***********");
-                Console.Write("Player: {0}\nAI: {1}\n", player1Score, aiScore);
+                Console.Write("Player: {0}\r\nAI: {1}\r\n", player1Score, aiScore);
                 Console.WriteLine("***************************");
             }
         }
@@ -33,7 +33,7 @@ namespace RockPaperScissors
                 int left = Console.CursorLeft;
                 Console.SetCursorPosition(0, 0);
                 Console.WriteLine("***********Score***********");
-                Console.Write("Player 1: {0}\nPlayer 2: {1}\n", player1Score, player2Score);
+                Console.Write("Player 1: {0}\r\nPlayer 2: {1}\r\n", player1Score, player2Score);
                 Console.WriteLine("***************************");
             }
         }

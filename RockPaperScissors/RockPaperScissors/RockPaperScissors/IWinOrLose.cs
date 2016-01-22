@@ -9,6 +9,6 @@ namespace RockPaperScissors
     interface IWinOrLose
     {
         void DisplayWin(string firstChoice, string secondChoice);
-        void DisplayLose(string firstChoice, string secondChoice);
+        void DisplayLoss(string firstChoice, string secondChoice);
     }
 }
