@@ -8,12 +8,15 @@ namespace RockPaperScissors
 {
     public class VsPlayer2Hard
     {
-        Display display;
-        Player player;
+        Display display = new Display();
+        Player player = new Player();
+        Rock rock = new Rock("Rock");
+        Paper paper = new Paper("Paper");
+        Scissors scissors = new Scissors("Scissors");
+        Lizard lizard = new Lizard("Lizard");
+        Spock spock = new Spock("Spock");
         public void VsOpponentHard()
         {
-            display = new Display();
-            player = new Player();
             string player1Name;
             string player2Name;
             bool gameActive = true;
@@ -60,29 +63,28 @@ namespace RockPaperScissors
                         if (player.player1Choice == "rock")
                         {
                             Console.WriteLine("{0} and {1} chose Rock", player1Name, player2Name);
-                            Console.WriteLine("It is a tie ");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("It is a tie\n");
                         }
                         else if (player.player1Choice == "paper")
                         {
                             display.player1Score++;
                             Console.WriteLine("{0} chose Rock and {1} chose Paper", player2Name, player1Name);
-                            Console.WriteLine("The Paper covers the Rock, {0} wins!", player1Name);
-                            Console.WriteLine(Environment.NewLine);
+                            paper.DisplayWin(player.player1Choice, player.player2Choice);
+                            Console.WriteLine("{0} wins!\n", player1Name);
                         }
                         else if (player.player1Choice == "scissors")
                         {
                             display.player2Score++;
                             Console.WriteLine("{0} chose Rock and {1} chose Scissors", player2Name, player1Name);
-                            Console.WriteLine("The Rock crushes the Scissors {0} wins!", player2Name);
-                            Console.WriteLine(Environment.NewLine);
+                            scissors.DisplayLose(player.player1Choice, player.player2Choice);
+                            Console.WriteLine("{0} wins!\n", player2Name);
                         }
                         else if (player.player1Choice == "lizard")
                         {
                             display.player2Score++;
                             Console.WriteLine("{0} chose Rock and {1} chose Lizard", player2Name, player1Name);
                             Console.WriteLine("The Rock crushes the Lizard, {0} wins!", player2Name);
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("{0} wins!\n", player2Name);
                         }
                         else if (player.player1Choice == "spock")
                         {
@@ -93,8 +95,7 @@ namespace RockPaperScissors
                         }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!\n");
                         }
 
                     }
@@ -106,14 +107,13 @@ namespace RockPaperScissors
                             Console.WriteLine("{0} chose Paper and {1} chose Rock", player2Name, player1Name);
                             Console.WriteLine("The Paper covers the Rock, {0} wins!", player2Name);
                             display.player2Score++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("{0} wins!\n", player2Name);
 
                         }
                         else if (player.player1Choice == "paper")
                         {
                             Console.WriteLine("{0} and {1} chose Paper", player1Name, player2Name);
-                            Console.WriteLine("It is a tie");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("It is a tie\n");
 
                         }
                         else if (player.player1Choice == "scissors")
@@ -135,12 +135,11 @@ namespace RockPaperScissors
                             Console.WriteLine("{0} chose Paper and {1} chose Spock", player2Name, player1Name);
                             Console.WriteLine("The Paper disapproves Spock, {0} wins.", player2Name);
                             display.player2Score++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("{0} wins!\n", player2Name);
                         }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!\n");
                         }
                     }
                     //scissors
@@ -160,20 +159,19 @@ namespace RockPaperScissors
                             display.player2Score++;
                             Console.WriteLine("{0} chose Scissors and {1} chose Paper", player2Name, player1Name);
                             Console.WriteLine("The Scissors cut the Paper, {0} wins!", player2Name);
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("{0} wins!\n", player2Name);
                         }
                         else if (player.player1Choice == "scissors")
                         {
                             Console.WriteLine("{0} chose Scissors and {1} chose Scissors", player2Name, player1Name);
-                            Console.WriteLine("It is a tie");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("It is a tie\n");
                         }
                         else if (player.player1Choice == "lizard")
                         {
                             Console.WriteLine("{0} chose Scissors and {1} chose Lizard", player2Name, player1Name);
                             Console.WriteLine("The Scissors decapitate the Lizard, {0} wins!", player2Name);
                             display.player2Score++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("{0} wins!\n", player2Name);
                         }
                         else if (player.player1Choice == "spock")
                         {
@@ -195,15 +193,13 @@ namespace RockPaperScissors
                             }
                             else if (player.player1Choice == "paper")
                             {
-                                display.player1Score++;
+                                display.player2Score++;
                                 Console.WriteLine("{0} chose Lizard and {1} chose Paper", player2Name, player1Name);
                                 Console.WriteLine("The computers Lizard ate your Paper, you lose.");
-                                display.aiScore++;
-                                Console.WriteLine(Environment.NewLine);
+                                Console.WriteLine("{0} wins!\n", player2Name);
                             }
                             else if (player.player1Choice == "scissors")
                             {
-                                display.aiScore++;
                                 Console.WriteLine("{0} chose Lizard and {1} chose Scissors", player2Name, player1Name);
                                 Console.WriteLine("The Lizard was decapitated by the Scissors, {0} wins!", player1Name);
                                 display.player1Score++;
@@ -212,20 +208,18 @@ namespace RockPaperScissors
                             else if (player.player1Choice == "lizard")
                             {
                                 Console.WriteLine("{0} and {1} chose Lizard", player1Name, player2Name);
-                                Console.WriteLine("It is a tie.");
-                                Console.WriteLine(Environment.NewLine);
+                                Console.WriteLine("It is a tie.\n");
                             }
                             else if (player.player1Choice == "spock")
                             {
                                 Console.WriteLine("{0} chose Lizard and {1} chose Spock", player2Name, player1Name);
                                 Console.WriteLine("The Lizard poisoned Spock, {0} wins!", player2Name);
                                 display.player2Score++;
-                                Console.WriteLine(Environment.NewLine);
+                                Console.WriteLine("{0} wins!\n", player2Name);
                             }
                             else
                             {
-                                Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
-                                Console.WriteLine(Environment.NewLine);
+                                Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!\n");
                             }
                         }
                         #endregion
@@ -236,7 +230,7 @@ namespace RockPaperScissors
                                 Console.WriteLine("{0} chose Spock and {1} chose Rock", player2Name, player1Name);
                                 Console.WriteLine("The computers Spock vaporized your Rock, {0} wins!", player2Name);
                                 display.player2Score++;
-                                Console.WriteLine(Environment.NewLine);
+                                Console.WriteLine("{0} wins!\n", player2Name);
                             }
                             else if (player.player1Choice == "paper")
                             {
@@ -250,7 +244,7 @@ namespace RockPaperScissors
                                 Console.WriteLine("{0} chose Spock and {1} chose Scissors", player2Name, player1Name);
                                 Console.WriteLine("The computers Spock crushed your Scissors, {0} wins!", player2Name);
                                 display.player2Score++;
-                                Console.WriteLine(Environment.NewLine);
+                                Console.WriteLine("{0} wins!\n", player2Name);
                             }
                             else if (player.player1Choice == "lizard")
                             {
@@ -262,13 +256,12 @@ namespace RockPaperScissors
                             else if (player.player1Choice == "spock")
                             {
                                 Console.WriteLine("{0} and {1} chose Spock", player1Name, player2Name);
-                                Console.WriteLine("It is a tie.");
-                                Console.WriteLine(Environment.NewLine);
+                                Console.WriteLine("It is a tie.\n");
+
                             }
                             else
                             {
-                                Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
-                                Console.WriteLine(Environment.NewLine);
+                                Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!\n");
                             }
 
                         }

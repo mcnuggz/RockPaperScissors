@@ -23,6 +23,7 @@ namespace RockPaperScissors
             {
                 case "1":
                     Console.WriteLine("Do you want the play on [Normal] or [Hard] difficulty?");
+                    Console.WriteLine("Normal is normal Rock, Paper, Scissors. Hard has Rock, Paper, Scissors, Lizard, Spock");
                     gameP2Difficulty = Console.ReadLine().ToLower();
                     if (gameP2Difficulty == "normal")
                     {
@@ -36,6 +37,7 @@ namespace RockPaperScissors
 
                 case "2":
                     Console.WriteLine("Do you want the play on [Normal] or [Hard] difficulty?");
+                    Console.WriteLine("Normal is normal Rock, Paper, Scissors. Hard has Rock, Paper, Scissors, Lizard, Spock");
                     gameAIDifficulty = Console.ReadLine().ToLower();
                     if (gameAIDifficulty == "normal")
                     {

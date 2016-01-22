@@ -8,20 +8,14 @@ namespace RockPaperScissors
 {
     public class VsPlayer2
     {
-        Display display;
-        Player player;
-        Rock rock;
-        Paper paper;
-        Scissors scissors;
+        Display display = new Display();
+        Player player = new Player();
+        Rock rock = new Rock("Rock");
+        Paper paper = new Paper("Paper");
+        Scissors scissors = new Scissors("Scissors");
 
         public void VsOpponent()
         {
-            rock = new Rock("Rock");
-            paper = new Paper("Paper");
-            scissors = new Scissors("Scissors");
-            display = new Display();
-            player = new Player();
-
             string player1Name;
             string player2Name;
             bool gameActive = true;

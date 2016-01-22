@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AI.cs" />
     <Compile Include="Display.cs" />
+    <Compile Include="IWinOrLose.cs" />
     <Compile Include="IWrite.cs" />
     <Compile Include="Lizard.cs" />
     <Compile Include="Paper.cs" />

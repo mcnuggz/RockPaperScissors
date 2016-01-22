@@ -11,11 +11,21 @@ namespace RockPaperScissors
         Display display;
         AI ai;
         Player player;
+        Rock rock;
+        Paper paper;
+        Scissors scissors;
+        Spock spock;
+        Lizard lizard;
         public void VsComputerHard()
         {
             display = new Display();
             player = new Player();
             ai = new AI("AI");
+            rock = new Rock("Rock");
+            paper = new Paper("Paper");
+            scissors = new Scissors("Scissors");
+            lizard = new Lizard("Lizard");
+            spock = new Spock("Spock");
             bool gameActive = true;
 
             while (gameActive == true)
@@ -43,42 +53,41 @@ namespace RockPaperScissors
                     {
                         if (player.player1Choice == "rock")
                         {
-                            Console.WriteLine("The computer chose Rock");
-                            Console.WriteLine("It is a tie ");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("The {0} chose Rock", ai.Name);
+                            Console.WriteLine("It is a tie\n");
                         }
                         else if (player.player1Choice == "paper")
                         {
                             display.player1Score++;
-                            Console.WriteLine("The computer chose Rock");
-                            Console.WriteLine("Your Paper covered the computers Rock, you win.");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("The {0} chose Rock", ai.Name);
+                            paper.DisplayWin(player.player1Choice, ai.aiChoice);
+                            Console.WriteLine("You win!\n");
                         }
                         else if (player.player1Choice == "scissors")
                         {
                             display.aiScore++;
-                            Console.WriteLine("The computer chose Rock");
-                            Console.WriteLine("The computers Rock crushed your Scissors, you lose!");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("The {0} chose Rock", ai.Name);
+                            scissors.DisplayLose(player.player1Choice, ai.aiChoice);
+                            Console.WriteLine("{0} wins!", ai.Name);
                         }
                         else if (player.player1Choice == "lizard")
                         {
                             display.aiScore++;
-                            Console.WriteLine("The computer chose Rock");
-                            Console.WriteLine("The computers Rock crushed your Lizard, you lose!");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("The {0} chose Rock", ai.Name);
+                            lizard.DisplayLose(player.player1Choice, ai.aiChoice);
+                            Console.WriteLine("{0} wins!\n", ai.Name);
                         }
                         else if (player.player1Choice == "spock")
                         {
                             display.player1Score++;
-                            Console.WriteLine("The computer chose Rock");
-                            Console.WriteLine("Spock vaporized the computers Rock, you win.");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("The {0} chose Rock", ai.Name);
+                            spock.DisplayWin(player.player1Choice, ai.aiChoice);
+                            Console.WriteLine("You win!\n");
                         }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!\n");
+
                         }
 
                     }
@@ -87,44 +96,42 @@ namespace RockPaperScissors
                     {
                         if (player.player1Choice == "rock")
                         {
-                            Console.WriteLine("The computer chose Paper");
-                            Console.WriteLine("The computers Paper covered your Rock, you lose");
+                            Console.WriteLine("The {0} chose Paper", ai.Name);
+                            rock.DisplayLose(player.player1Choice, ai.aiChoice);
                             display.aiScore++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("{0} wins!\n", ai.Name);
 
                         }
                         else if (player.player1Choice == "paper")
                         {
-                            Console.WriteLine("The computer chose Paper");
-                            Console.WriteLine("It is a tie");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("The {0} chose Paper",ai.Name);
+                            Console.WriteLine("It is a tie\n");
 
                         }
                         else if (player.player1Choice == "scissors")
                         {
-                            Console.WriteLine("The computer chose Paper");
-                            Console.WriteLine("The Players Scissors cuts the computers Paper, you win");
+                            Console.WriteLine("The {0} chose Paper", ai.Name);
+                            scissors.DisplayWin(player.player1Choice, ai.aiChoice);
                             display.player1Score++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You win!\n");
                         }
                         else if (player.player1Choice == "lizard")
                         {
-                            Console.WriteLine("The computer chose Paper");
-                            Console.WriteLine("The computers paper was eaten by your Lizard, you win!");
+                            Console.WriteLine("The {0} chose Paper",ai.Name);
+                            lizard.DisplayWin(player.player1Choice, ai.aiChoice);
                             display.player1Score++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You win!\n");
                         }
                         else if (player.player1Choice == "spock")
                         {
-                            Console.WriteLine("The computer chose Paper");
-                            Console.WriteLine("The computers Paper disapproves Spock");
+                            Console.WriteLine("The {0} chose Paper", ai.Name);
+                            spock.DisplayLose(player.player1Choice, ai.aiChoice);
                             display.aiScore++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("{0} wins!\n", ai.Name);
                         }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!\n");
                         }
                     }
                     //scissors
@@ -134,42 +141,40 @@ namespace RockPaperScissors
                         {
                             //ai scissors, you rock = win
                             display.player1Score++;
-                            Console.WriteLine("The computer chose Scissors");
-                            Console.WriteLine("Your Rock crushed the computers Scissors, you win");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("The {0} chose Scissors", ai.Name);
+                            rock.DisplayLose(player.player1Choice, ai.aiChoice);
+                            Console.WriteLine("{0} wins!\n", ai.Name);
                         }
                         else if (player.player1Choice == "paper")
                         {
                             //ai scissors, you paper = lose
                             display.aiScore++;
-                            Console.WriteLine("This computer chose scissors");
-                            Console.WriteLine("The computers Scissors cuts your Paper, you lose");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("This {0} chose scissors",ai.Name);
+                            paper.DisplayLose(player.player1Choice, ai.aiChoice);
+                            Console.WriteLine("{0} wins!\n", ai.Name);
                         }
                         else if (player.player1Choice == "scissors")
                         {
-                            Console.WriteLine("This computer chose scissors");
-                            Console.WriteLine("It is a tie");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("This {0} chose scissors",ai.Name);
+                            Console.WriteLine("It is a tie\n");
                         }
                         else if (player.player1Choice == "lizard") 
                         {
-                            Console.WriteLine("This computer chose scissors");
-                            Console.WriteLine("The computers scissors decapitated your lizard, you lose.");
+                            Console.WriteLine("This {0} chose scissors", ai.Name);
+                            lizard.DisplayLose(player.player1Choice, ai.aiChoice);
                             display.aiScore++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("{0} wins!\n", ai.Name);
                         }
                         else if (player.player1Choice == "spock")
                         {
-                            Console.WriteLine("This computer chose scissors");
-                            Console.WriteLine("Spock crushes the computers scissors, you win!");
+                            Console.WriteLine("This {0} chose scissors",ai.Name);
+                            spock.DisplayWin(player.player1Choice, ai.aiChoice);
                             display.player1Score++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You win!\n");
                         }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!\n");
                         }
 
                     }
@@ -177,44 +182,43 @@ namespace RockPaperScissors
                     {
                         if (player.player1Choice == "rock")
                         {
-                            Console.WriteLine("The computer chose Lizard");
-                            Console.WriteLine("The computers Lizard was crushed by your Rock, you win!");
+                            Console.WriteLine("The {0} chose Lizard",ai.Name);
+                            rock.DisplayWin(player.player1Choice, ai.aiChoice);
                             display.player1Score++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You win!\n");
                         }
                         else if (player.player1Choice == "paper")
                         {
                             display.player1Score++;
-                            Console.WriteLine("The computer chose Lizard");
-                            Console.WriteLine("The computers Lizard ate your Paper, you lose.");
+                            Console.WriteLine("The {0} chose Lizard",ai.Name);
+                            paper.DisplayLose(player.player1Choice, ai.aiChoice);
                             display.aiScore++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("{0} wins!\n", ai.Name);
                         }
                         else if (player.player1Choice == "scissors")
                         {
                             display.aiScore++;
-                            Console.WriteLine("The computer chose Lizard");
-                            Console.WriteLine("The computers Lizard was decapitated by your Scissors, you win!");
+                            Console.WriteLine("The {0} chose Lizard", ai.Name);
+                            scissors.DisplayWin(player.player1Choice, ai.aiChoice);
                             display.player1Score++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You win!\n");
                         }
                         else if (player.player1Choice == "lizard")
                         {
-                            Console.WriteLine("The computer chose Lizard");
+                            Console.WriteLine("The {0} chose Lizard",ai.Name);
                             Console.WriteLine("It is a tie.");
                             Console.WriteLine(Environment.NewLine);
                         }
                         else if (player.player1Choice == "spock")
                         {
-                            Console.WriteLine("The computer chose Lizard");
-                            Console.WriteLine("The computers Lizard poisoned Spock, you lose.");
+                            Console.WriteLine("The {0} chose Lizard",ai.Name);
+                            spock.DisplayLose(player.player1Choice, ai.aiChoice);
                             display.aiScore++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("{0} wins!\n", ai.Name);
                         }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!\n");
                         }
                     }
 
@@ -222,43 +226,40 @@ namespace RockPaperScissors
                     {
                         if (player.player1Choice == "rock")
                         {
-                            Console.WriteLine("The computer chose Spock");
-                            Console.WriteLine("The computers Spock vaporized your Rock, you lose.");
+                            Console.WriteLine("The {0} chose Spock",ai.Name);
+                            rock.DisplayLose(player.player1Choice, ai.aiChoice);
                             display.aiScore++;
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("{0} wins!\n", ai.Name);
                         }
                         else if (player.player1Choice == "paper")
                         {
                             display.player1Score++;
-                            Console.WriteLine("The computer chose Spock");
-                            Console.WriteLine("Your Paper disapproves the computers Spock, you win.");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("The {0} chose Spock",ai.Name);
+                            paper.DisplayWin(player.player1Choice, ai.aiChoice);
+                            Console.WriteLine("You win!\n");
                         }
                         else if (player.player1Choice == "scissors")
                         {
                             display.aiScore++;
-                            Console.WriteLine("The computer chose Spock");
-                            Console.WriteLine("The computers Spock crushed your Scissors, you lose!");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("The {0} chose Spock",ai.Name);
+                            scissors.DisplayLose(player.player1Choice, ai.aiChoice);
+                            Console.WriteLine("{0} wins!\n", ai.Name);
                         }
                         else if (player.player1Choice == "lizard")
                         {
                             display.player1Score++;
-                            Console.WriteLine("The computer chose Spock");
-                            Console.WriteLine("The computers Spock was poisoned by your Lizard, you win!");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("The {0} chose Spock",ai.Name);
+                            lizard.DisplayWin(player.player1Choice, ai.aiChoice);
+                            Console.WriteLine("You win!\n");
                         }
                         else if (player.player1Choice == "spock")
                         {
-                            display.player1Score++;
-                            Console.WriteLine("The computer chose Spock");
-                            Console.WriteLine("It is a tie.");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("The {0} chose Spock",ai.Name);
+                            Console.WriteLine("It is a tie.\n");
                         }
                         else
                         {
-                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!");
-                            Console.WriteLine(Environment.NewLine);
+                            Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!\n");
                         }
                     }
                 }

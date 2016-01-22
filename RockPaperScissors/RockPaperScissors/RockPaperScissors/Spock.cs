@@ -6,12 +6,36 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors
 {
-    internal class Spock
+    internal class Spock : IWinOrLose
     {
         public string Name;
         public Spock(string name)
         {
             this.Name = name;
+        }
+
+        public void DisplayLose(string firstChoice, string secondChoice)
+        {
+            if (firstChoice == "spock" && secondChoice == "paper")
+            {
+                Console.WriteLine("The Paper disapproves Spock!");
+            }
+            else if (firstChoice == "spock" && secondChoice == "lizard")
+            {
+                Console.WriteLine("Spock is poisoned by the Lizard!");
+            }
+        }
+
+        public void DisplayWin(string firstChoice, string secondChoice)
+        {
+            if (firstChoice == "spock" && secondChoice == "rock")
+            {
+                Console.WriteLine("Spock vaporizes the Rock!");
+            }
+            else if (firstChoice == "spock" && secondChoice == "scissors")
+            {
+                Console.WriteLine("Spock crushes the Scissors!");
+            }
         }
     }
 }
