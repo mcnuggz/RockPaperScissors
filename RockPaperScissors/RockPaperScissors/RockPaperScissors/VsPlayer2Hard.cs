@@ -262,11 +262,9 @@ namespace RockPaperScissors
                         {
                             Console.WriteLine("You must choose Rock, Paper, Scissors, Lizard, or Spock!\r\n");
                         }
-
-                    }
                     }
                 }
             }
         }
     }
-
+}
